@@ -1,6 +1,6 @@
--- The total viewership for laptops and mobile devices, where mobile is defined as the sum of tablet and phone
+-- Q : The total viewership for laptops and mobile devices, where mobile is defined as the sum of tablet and phone
 
--- COUNT + FILTER + (WHERE…) + AS …
+--## COUNT + FILTER + (WHERE…) + AS …
 
 SELECT
     COUNT(*) FILTER (WHERE device_type = 'laptop') AS laptop_reviews,
