@@ -1,5 +1,6 @@
 -- The days between each user's first and last post in 2021.
 
+
 /* ##
     DATE_PART('part', variable)
     ::DATE == converting variable to a DATE type
