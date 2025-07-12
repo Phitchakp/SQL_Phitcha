@@ -1,11 +1,26 @@
 -- The days between each user's first and last post in 2021.
 
+/*
+DATEDIFF(a,b)
+YEAR()
+*/
+SELECT user_id, 
+    DATEDIFF(MAX(DATE(post_date)), MIN(DATE(post_date))) AS day_between
+FROM posts
+WHERE YEAR(post_date) = 2021
+    GROUP BY user_id
+    HAVING day_between > 1
+;
+'YEAR()' /  'MONTH()' / 'MONTHNAME()' / 'WEEK()' / 'DAY()' /  'HOUR()' /  'MINUTE()' /  'SECOND()'
+
+'DATE_FORMAT(..., '%Y')'
+'%Y'          '%M'        '%b'            '%W'      '%D'      '%H' '%h'       '%i'        '%s'
+
 
 /* ##
     DATE_PART('part', variable)
     ::DATE == converting variable to a DATE type
 */
-
 SELECT user_id, 
     MAX(post_date :: DATE) - MIN(post_date :: DATE) AS day_between
 FROM posts
